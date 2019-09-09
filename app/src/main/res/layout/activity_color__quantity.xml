@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FA"
+    android:orientation="vertical"
+
+    tools:context=".Color_Quantity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="12dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model no"
+                android:textSize="20dp"
+
+                android:layout_gravity="center"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="A mobile phone is a wireless handheld device that allows users to make and receive calls and to send text messages, among other features. The earliest generation of mobile phones could only make and receive calls. ... A mobile phone may also be known as a cellular phone or simply a cell phone"
+                android:maxLines="4"/>
+
+
+
+
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="#FA0421" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/integer_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:background="@drawable/button_bg"
+
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/increase"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="increaseInteger"
+                android:text="+" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="#40A709" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="decreaseInteger1"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/integer_number2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:background="@drawable/button_bg"
+
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/increase2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="increaseInteger1"
+                android:text="+" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="#0425FA" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="decreaseInteger2"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/integer_number3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:background="@drawable/button_bg"
+
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/increase3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="increaseInteger2"
+                android:text="+" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:background="#E09703" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="decreaseInteger3"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/integer_number4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:background="@drawable/button_bg"
+
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/increase4"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:onClick="increaseInteger3"
+                android:text="+" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="#CDDC39"
+        android:text="Submit" />
+</LinearLayout>
