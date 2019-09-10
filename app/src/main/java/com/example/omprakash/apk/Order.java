@@ -67,11 +67,9 @@ public class Order extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment myFragment  = new Brand1Fragment();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.frame1, myFragment );
-                fragmentTransaction.addToBackStack("myFragment");
-                fragmentTransaction.commit();
+               GlobalVar.isBrand = true;
+               startActivity(new Intent(Order.this, Home.class));
+               finishAffinity();
             }
         });
 
