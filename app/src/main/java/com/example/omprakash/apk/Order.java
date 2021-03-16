@@ -35,14 +35,12 @@ public class Order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
         dataList = new ArrayList<>();
-        b1=findViewById(R.id.button1);
-        grid= findViewById(R.id.grid);
-
+        b1 = findViewById(R.id.button1);
+        grid = findViewById(R.id.grid);
 
 
         myDb = new DatabaseHelper(this);
         Cursor cursor = myDb.getAllData();
-
 
 
         if (cursor.getCount() == 0) {
@@ -72,17 +70,17 @@ public class Order extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               GlobalVar.isBrand = true;
-               startActivity(new Intent(Order.this, Home.class));
-               finishAffinity();
+                GlobalVar.isBrand = true;
+                startActivity(new Intent(Order.this, Home.class));
+                finishAffinity();
             }
         });
 
-        final ListAdapter adapter=new ListAdapter(Order.this, dataList);
+        final ListAdapter adapter = new ListAdapter(Order.this, dataList);
         grid.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         grid.invalidateViews();
-        Log.e("dbLog","Cart Data Size"+dataList.size());
+        Log.e("dbLog", "Cart Data Size" + dataList.size());
     }
 
 }
