@@ -48,8 +48,6 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,31 +75,57 @@
             android:layout_gravity="center"
             android:layout_weight="6"
             android:gravity="center"
-            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/decrease"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:onClick="decreaseInteger"
-                android:text="-" />
+            >
 
-            <TextView
-                android:id="@+id/integer_number"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/pizza_card_btn"
 
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
             <Button
-                android:id="@+id/increase"
-                android:layout_width="50dp"
+                android:id="@+id/minus"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:onClick="decreaseInteger"
+                android:background="@drawable/minus_icon"
+                app:backgroundTint="@color/green_color"
+                />
+
+            <TextView
+                android:id="@+id/counter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:text="0"
+                android:textStyle="bold"
+                app:fontFamily="@font/athiti"
+                />
+
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
                 android:onClick="increaseInteger"
-                android:text="+" />
+                android:background="@drawable/plus_button"
+                app:backgroundTint="@color/green_color"
+                />
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/pizza_card_btn"
+
+                android:id="@+id/mop"
+                android:text="mop"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -115,7 +139,6 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_weight="6"
             android:gravity="center"
             android:orientation="horizontal">
@@ -127,37 +150,63 @@
                 android:background="#40A709" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="6"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/decrease2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:onClick="decreaseInteger1"
-                android:text="-" />
-
-            <TextView
-                android:id="@+id/integer_number2"
+            >
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/pizza_card_btn"
 
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
             <Button
-                android:id="@+id/increase2"
-                android:layout_width="50dp"
+                android:id="@+id/minus2"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:onClick="decreaseInteger1"
+                android:background="@drawable/minus_icon"
+                app:backgroundTint="@color/green_color"
+                />
+
+            <TextView
+                android:id="@+id/counter2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:text="0"
+                android:textStyle="bold"
+                app:fontFamily="@font/athiti"
+                />
+
+            <Button
+                android:id="@+id/plus2"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
                 android:onClick="increaseInteger1"
-                android:text="+" />
+                android:background="@drawable/plus_button"
+                app:backgroundTint="@color/green_color"
+                />
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pizza_card_btn"
+
+                android:id="@+id/mop2"
+                android:text="mop"/>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -183,37 +232,65 @@
                 android:background="#0425FA" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="6"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/decrease3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:onClick="decreaseInteger2"
-                android:text="-" />
-
-            <TextView
-                android:id="@+id/integer_number3"
+            >
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/pizza_card_btn"
 
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
 
             <Button
-                android:id="@+id/increase3"
-                android:layout_width="50dp"
+                android:id="@+id/minus3"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:onClick="decreaseInteger2"
+                android:background="@drawable/minus_icon"
+                app:backgroundTint="@color/green_color"
+                />
+
+            <TextView
+                android:id="@+id/counter3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:text="0"
+                android:textStyle="bold"
+                app:fontFamily="@font/athiti"
+                />
+
+            <Button
+                android:id="@+id/plus3"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
                 android:onClick="increaseInteger2"
-                android:text="+" />
+                android:background="@drawable/plus_button"
+                app:backgroundTint="@color/green_color"
+                />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/pizza_card_btn"
+
+                android:id="@+id/mop3"
+                android:text="mop"/>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -239,6 +316,7 @@
                 android:background="#E09703" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -246,34 +324,69 @@
             android:layout_weight="6"
             android:gravity="center"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/decrease4"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:onClick="decreaseInteger3"
-                android:text="-" />
-
-            <TextView
-                android:id="@+id/integer_number4"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:background="@drawable/button_bg"
+                android:background="@drawable/pizza_card_btn"
 
-                android:textSize="35sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
             <Button
-                android:id="@+id/increase4"
-                android:layout_width="50dp"
+                android:id="@+id/minus4"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:onClick="decreaseInteger3"
+                android:background="@drawable/minus_icon"
+                app:backgroundTint="@color/green_color"
+                />
+
+            <TextView
+                android:id="@+id/counter4"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textSize="18sp"
+                android:text="0"
+                android:textStyle="bold"
+                app:fontFamily="@font/athiti"
+                />
+
+            <Button
+                android:id="@+id/plus4"
+                android:layout_width="30dp"
                 android:onClick="increaseInteger3"
-                android:text="+" />
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/plus_button"
+                app:backgroundTint="@color/green_color"
+                />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/pizza_card_btn"
+
+                android:id="@+id/mop4"
+                android:text="mop"/>
+
         </LinearLayout>
 
     </LinearLayout>
-    <Button
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/total"
+    android:layout_marginTop="20dp"
+    android:text="0"
+    android:layout_gravity="center"/>
+
+     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

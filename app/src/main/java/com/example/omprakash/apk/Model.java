@@ -82,7 +82,7 @@ public class Model extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                String value= (String) adapter.getItem(position);
+                String value= web[position];
 
                 Intent i = new Intent(Model.this, Color_Quantity.class);
                 i.putExtra("brand",message);

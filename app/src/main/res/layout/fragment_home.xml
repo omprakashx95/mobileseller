@@ -15,4 +15,10 @@
         android:layout_height="wrap_content"
         >
     </ListView>
+    <Button
+        android:layout_below="@+id/list"
+        android:text="sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b"/>
     </RelativeLayout>

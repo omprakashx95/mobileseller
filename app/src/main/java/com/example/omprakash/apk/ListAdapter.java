@@ -12,7 +12,8 @@ import java.util.List;
 
 public class ListAdapter extends BaseAdapter {
     private Context mContext;
-DatabaseHelper myDb;
+    DatabaseHelper myDb;
+    int price = 250;
 
     //private final String[] web;
     //private final int[] Imageid;
@@ -22,7 +23,7 @@ DatabaseHelper myDb;
     public ListAdapter(Context c, List<CartModel> dataList) {
         mContext = c;
         this.dataList = dataList;
-        myDb=new DatabaseHelper(mContext);
+        myDb = new DatabaseHelper(mContext);
 
     }
 
@@ -45,7 +46,7 @@ DatabaseHelper myDb;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         View grid;
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -60,7 +61,7 @@ DatabaseHelper myDb;
         }
 
         final CartModel m = dataList.get(position);
-      //  CartModel n = dataList1.get(position);
+        //  CartModel n = dataList1.get(position);
 
         final TextView textView1 = (TextView) grid.findViewById(R.id.text1);
         final TextView textView2 = (TextView) grid.findViewById(R.id.text2);
@@ -79,6 +80,11 @@ DatabaseHelper myDb;
         final TextView c2 = grid.findViewById(R.id.counter2);
         final TextView c3 = grid.findViewById(R.id.counter3);
         final TextView c4 = grid.findViewById(R.id.counter4);
+        final TextView mop1 = grid.findViewById(R.id.mop1);
+        final TextView mop2 = grid.findViewById(R.id.mop2);
+        final TextView mop3 = grid.findViewById(R.id.mop3);
+        final TextView mop4 = grid.findViewById(R.id.mop4);
+        final TextView total = grid.findViewById(R.id.total);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -88,15 +94,17 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop1.getText().toString());
 
                 c1Value++;
+                mp = mp + price;
+                tot = tot + price;
                 c1.setText(String.valueOf(c1Value));
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                mop1.setText(String.valueOf(mp));
+                total.setText(String.valueOf(tot));
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
 
             }
         });
@@ -109,15 +117,19 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop2.getText().toString());
 
                 c2Value++;
+                mp = mp + price;
+                tot = tot + price;
+                mop2.setText(String.valueOf(mp));
                 c2.setText(String.valueOf(c2Value));
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                total.setText(String.valueOf(tot));
+
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
+
 
             }
         });
@@ -129,15 +141,17 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop3.getText().toString());
 
                 c3Value++;
+                mp = mp + price;
+                tot = tot + price;
+                mop3.setText(String.valueOf(mp));
                 c3.setText(String.valueOf(c3Value));
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                total.setText(String.valueOf(tot));
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
 
             }
         });
@@ -148,16 +162,17 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop4.getText().toString());
 
                 c4Value++;
+                mp = mp + price;
+                tot = tot + price;
+                mop4.setText(String.valueOf(mp));
                 c4.setText(String.valueOf(c4Value));
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
-
+                total.setText(String.valueOf(tot));
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
@@ -167,16 +182,26 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
-               if(c1Value!=0) {
-                   c1Value--;
-                   c1.setText(String.valueOf(c1Value));
-               }
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop1.getText().toString());
+
+                if (c1Value != 0) {
+                    c1Value--;
+                    mp=mp-price;
+                    tot = tot - price;
+
+                    mop1.setText(String.valueOf(mp));
+                    c1.setText(String.valueOf(c1Value));
+                    total.setText(String.valueOf(tot));
+                }
+                String i = m.getId();
+                if((c1Value == 0)&&(c2Value==0)&&(c3Value==0)&&(c4Value==0)){
+
+                    myDb.deleteData(i);
+                }
+
+
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
 
             }
         });
@@ -188,16 +213,24 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
+                int mp = Integer.parseInt(mop2.getText().toString());
+
                 if (c2Value != 0) {
                     c2Value--;
+                    mp=mp-price;
+                    tot = tot - price;
+                    mop2.setText(String.valueOf(mp));
                     c2.setText(String.valueOf(c2Value));
+                    total.setText(String.valueOf(tot));
                 }
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
+                if((c1Value == 0)&&(c2Value==0)&&(c3Value==0)&&(c4Value==0)){
+
+                    myDb.deleteData(i);
+                }
+
 
             }
         });
@@ -208,16 +241,25 @@ DatabaseHelper myDb;
                 int c1Value = Integer.parseInt(c1.getText().toString());
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
+                int mp = Integer.parseInt(mop3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
-              if(c3Value!=0)
-                c3Value--;
-                c3.setText(String.valueOf(c3Value));
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                int tot = Integer.parseInt(total.getText().toString());
+                if (c3Value != 0) {
+                    c3Value--;
+                    tot = tot - price;
+                    mp=mp-price;
+                    mop3.setText(String.valueOf(mp));
+                    c3.setText(String.valueOf(c3Value));
+                    total.setText(String.valueOf(tot));
+
+                }
+
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
+                if((c1Value == 0)&&(c2Value==0)&&(c3Value==0)&&(c4Value==0)){
+
+                    myDb.deleteData(i);
+                }
 
             }
         });
@@ -229,16 +271,24 @@ DatabaseHelper myDb;
                 int c2Value = Integer.parseInt(c2.getText().toString());
                 int c3Value = Integer.parseInt(c3.getText().toString());
                 int c4Value = Integer.parseInt(c4.getText().toString());
+                int mp = Integer.parseInt(mop4.getText().toString());
+                int tot = Integer.parseInt(total.getText().toString());
                 if (c4Value != 0) {
                     c4Value--;
+                    tot = tot - price;
+                    mp=mp-price;
+                    mop4.setText(String.valueOf(mp));
                     c4.setText(String.valueOf(c4Value));
+                    total.setText(String.valueOf(tot));
+
                 }
-                String i=m.getId();
-                boolean isUpdate = myDb.updateData(i,
-                        textView1.getText().toString(),
-                        textView2.getText().toString(), textView3.getText().toString(),
-                        String.valueOf(c1Value),String.valueOf(c2Value),
-                        String.valueOf(c3Value),String.valueOf(c4Value));
+                String i = m.getId();
+                dbUpdate(i, textView1, textView2, textView3,c1Value,c2Value, c3Value,c4Value);
+
+                if((c1Value == 0)&&(c2Value==0)&&(c3Value==0)&&(c4Value==0)){
+
+                    myDb.deleteData(i);
+                }
 
             }
         });
@@ -250,7 +300,18 @@ DatabaseHelper myDb;
         c2.setText(m.getColor2());
         c3.setText(m.getColor3());
         c4.setText(m.getColor4());
-
+        mop1.setText(m.getMop1());
+        mop2.setText(m.getMop2());
+        mop3.setText(m.getMop3());
+        mop4.setText(m.getMop4());
+        total.setText(m.getTotal());
         return grid;
+    }
+
+    private void dbUpdate(String id, TextView name, TextView surName, TextView marks, int c1,
+                          int c2, int c3, int c4) {
+        myDb.updateData(id, name.getText().toString(), surName.getText().toString(),
+                marks.getText().toString(), String.valueOf(c1), String.valueOf(c2),
+                String.valueOf(c3), String.valueOf(c4));
     }
 }

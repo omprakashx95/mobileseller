@@ -87,7 +87,7 @@ public class Brand1Fragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            String value= (String) adapter.getItem(position);
+            String value= brand[position];
             Log.v(value,"run");
                 Intent i= new Intent(getActivity(),Category.class);
                 i.putExtra ( "TextBox", value );

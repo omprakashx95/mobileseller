@@ -31,12 +31,12 @@ public class MyListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater=context.getLayoutInflater();
         View rowView=inflater.inflate(R.layout.list_image, null,true);
 
-        //TextView titleText = (TextView) rowView.findViewById(R.id.title);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
+        TextView titleText = (TextView) rowView.findViewById(R.id.title);
+        //ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
         //TextView subtitleText = (TextView) rowView.findViewById(R.id.subtitle);
 
-        //titleText.setText(maintitle[position]);
-        imageView.setImageResource(imgid[position]);
+        titleText.setText(maintitle[position]);
+        //imageView.setImageResource(imgid[position]);
         //subtitleText.setText(subtitle[position]);
 
         return rowView;

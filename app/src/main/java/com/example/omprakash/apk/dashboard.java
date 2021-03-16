@@ -22,7 +22,7 @@ EditText edit;
         Intent intent = getIntent();
         final String message = intent.getStringExtra("otp");
         Log.v("otp",message);
-
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="12dp"
+        android:layout_margin="2dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp">
         <LinearLayout
@@ -21,11 +21,11 @@
             android:weightSum="9">
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="4.5"
+                android:layout_weight="3.5"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="horizontal"
                     >
@@ -37,7 +37,7 @@
 
                         android:layout_marginTop="7dp"/>
                     <TextView
-                        android:layout_width="100dp"
+                        android:layout_width="80dp"
                         android:layout_height="30dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
@@ -48,7 +48,7 @@
                         />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:orientation="horizontal"
                     >
@@ -68,7 +68,7 @@
                     </View>
 
                     <TextView
-                        android:layout_width="85dp"
+                        android:layout_width="60dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="10dp"
                         android:gravity="center"
@@ -91,7 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_weight="4.5">
+                android:layout_weight="5.5">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -117,7 +117,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:background="@drawable/pizza_card_btn"
                         android:orientation="horizontal">
@@ -153,6 +153,20 @@
                             app:backgroundTint="@color/green_color"
                             />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pizza_card_btn"
+
+                            android:id="@+id/mop1"
+                            android:text="mop"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -166,7 +180,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -182,7 +196,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:background="@drawable/pizza_card_btn"
                         android:orientation="horizontal">
@@ -218,6 +232,21 @@
                             app:backgroundTint="@color/green_color"
                             />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pizza_card_btn"
+
+                            android:id="@+id/mop2"
+                            android:text="mop"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -231,7 +260,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -247,7 +276,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:background="@drawable/pizza_card_btn"
                         android:orientation="horizontal">
@@ -283,6 +312,21 @@
                             app:backgroundTint="@color/green_color"
                             />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pizza_card_btn"
+
+                            android:id="@+id/mop3"
+                            android:text="mop"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -296,7 +340,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:orientation="horizontal">
 
@@ -312,7 +356,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_weight="4"
                         android:gravity="center"
                         android:background="@drawable/pizza_card_btn"
                         android:orientation="horizontal">
@@ -348,10 +392,33 @@
                             app:backgroundTint="@color/green_color"
                             />
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pizza_card_btn"
+
+                            android:id="@+id/mop4"
+                            android:text="mop"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="total"
+        android:id="@+id/total"
+        android:layout_marginRight="25dp"
+        android:gravity="right"
+        />
 </LinearLayout>

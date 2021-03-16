@@ -8,19 +8,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.omprakash.apk.adapter.MyListAdapter;
 import com.example.omprakash.apk.R;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
     ListView list;
+Button b;
+    boolean unSorted=true;
+    boolean SortAsc=true;
+
 
     String[] maintitle ={
-            "Title 1","Title 2",
-            "Title 3","Title 4",
-            "Title 5",
+            "Arjun Singh","Arjun Kushwaha","Arjun Kushwaha","Sonu","Abhay",
+            "Lalit","Vikas",
+            "Zoro","Bora","Pikachu","Tony","Rahul","Krish","Aman"
     };
 
     String[] subtitle ={
@@ -44,10 +54,18 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         MyListAdapter adapter=new MyListAdapter(getActivity(), maintitle, subtitle,imgid);
+
         list=view.findViewById(R.id.list);
+        b=view.findViewById(R.id.b);
+        //list.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.,maintitle));
         list.setAdapter(adapter);
-
-
+        sortdata();
+b.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        sortdata();
+    }
+});
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -79,4 +97,21 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+    private void sortdata() {
+
+        List<String> galaxy= Arrays.asList(maintitle);
+        if(unSorted) Collections.sort(galaxy);
+        else Collections.reverse(galaxy);
+
+        SortAsc=!SortAsc;
+        unSorted=false;
+        String[] mStringArray = new String[galaxy.size()];
+        mStringArray = galaxy.toArray(mStringArray);
+
+        MyListAdapter adapter=new MyListAdapter(getActivity(), mStringArray, subtitle,imgid);
+        //list.setAdapter(new MyListAdapter(this,R.layout.list_image,galaxy));
+        list.setAdapter(adapter);
+    }
+
 }

@@ -18,6 +18,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_6 = "col2";
     public static final String COL_7 = "col3";
     public static final String COL_8 = "col4";
+    public static final String COL_9 = "mop1";
+    public static final String COL_10 = "mop2";
+    public static final String COL_11 = "mop3";
+    public static final String COL_12 = "mop4";
+    public static final String COL_13 = "total";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -25,7 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,SURNAME TEXT,MARKS INTEGER,col1 INTEGER,col2 INTEGER,col3 INTEGER,col4 INTEGER)");
+        db.execSQL("create table " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,SURNAME TEXT,MARKS INTEGER,col1 INTEGER,col2 INTEGER,col3 INTEGER,col4 INTEGER,mop1 INTEGER,mop2 INTEGER,mop3 INTEGER,mop4 INTEGER, total INTEGER)");
 
     }
 
@@ -36,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name, String surname, String marks,String col1, String col2, String col3, String col4) {
+    public boolean insertData(String name, String surname, String marks,String col1, String col2, String col3, String col4,String mop1,String mop2,String mop3,String mop4,String total) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, name);
@@ -46,6 +52,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_6, col2);
         contentValues.put(COL_7, col3);
         contentValues.put(COL_8, col4);
+        contentValues.put(COL_9, mop1);
+        contentValues.put(COL_10, mop2);
+        contentValues.put(COL_11, mop3);
+        contentValues.put(COL_12, mop4);
+        contentValues.put(COL_13, total);
+
         long result = db.insert(TABLE_NAME, null, contentValues);
         if (result == -1)
             return false;

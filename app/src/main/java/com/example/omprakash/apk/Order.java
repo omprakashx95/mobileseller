@@ -49,6 +49,7 @@ public class Order extends AppCompatActivity {
             Toast.makeText(this, "Noting Found", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
+
                 model = new CartModel();
                 model.setId(cursor.getString(0));
                 model.setName(cursor.getString(1));
@@ -58,7 +59,11 @@ public class Order extends AppCompatActivity {
                 model.setColor2(cursor.getString(5));
                 model.setColor3(cursor.getString(6));
                 model.setColor4(cursor.getString(7));
-
+                model.setMop1(cursor.getString(8));
+                model.setMop2(cursor.getString(9));
+                model.setMop3(cursor.getString(10));
+                model.setMop4(cursor.getString(11));
+                model.setTotal(cursor.getString(12));
 
                 dataList.add(model);
             }
@@ -76,7 +81,7 @@ public class Order extends AppCompatActivity {
         final ListAdapter adapter=new ListAdapter(Order.this, dataList);
         grid.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
+        grid.invalidateViews();
         Log.e("dbLog","Cart Data Size"+dataList.size());
     }
 
